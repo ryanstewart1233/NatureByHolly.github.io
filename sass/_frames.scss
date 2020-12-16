@@ -1,0 +1,102 @@
+.frames {
+    
+    grid-column: center-start / center-end;
+    grid-row: 4 / 5;
+    
+
+    display: grid;
+    margin-top: 6rem;
+    padding-bottom: 5rem;
+
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); //makes grid responsive
+    gap: 5rem;
+
+    &__title {
+        grid-column: col-start 4 / col-end 6;
+        grid-row: 3 / 4;
+
+        
+        font-size: $heading-size;
+        color: $color-white;
+        
+    }
+
+    &__background {
+        grid-column: full-start / full-end;
+        grid-row: 3 / 5;
+        z-index: -1;
+        background-image: linear-gradient(rgba($color-primary-light, 0.8),
+        rgba($color-green-light, 0.8));
+        
+        transform: skewY(-5deg);
+
+        @include side-margin;
+        
+    }
+
+    
+}
+
+.frame {
+
+    &__item {
+        background-color: $color-secondary;
+        border-radius: 5px;
+        color: $color-white;
+
+        box-shadow: $shadow-1;
+        transition: all .3s;
+
+        &:hover {
+            transform: translateY(-0.7rem);
+            box-shadow: $shadow-3;
+        }
+
+        &:active {
+            transform: translateY(-0.5rem);
+            box-shadow: $shadow-2;
+        }
+
+        cursor: pointer;
+        
+        
+       
+        
+    }
+
+    &__img {
+        width: 100%;
+        overflow: hidden;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        padding: 1rem;
+
+    }
+
+    &__title {
+        font-size: 1.6rem;
+    }
+
+    &__price {
+        font-size: 1.4rem;
+    }
+
+}
+
+.shop--btn {
+    grid-row: 4/5;
+    grid-column: 5/7;
+    align-self: end;
+    margin-bottom: 5rem;
+    
+    
+}

@@ -1,0 +1,143 @@
+.reviews {
+    
+    background-color: $color-grey-light-2;
+    grid-column: full-start / full-end;
+    grid-row: 5/6;
+    height: min-content;
+    padding-top: 3rem;
+    
+
+    
+
+    margin: 0 1rem;
+    transform: skewY(-5deg);
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    
+    
+    
+
+    &__info {
+        transform: skewY(5deg);
+        
+        padding:7rem;
+        padding-top: 0rem;
+
+        display: grid;
+        gap: 5rem;
+        
+        
+
+        &__title {
+            @include sub-title;
+            margin-bottom: 3rem;
+        }
+
+        &__text {
+            @include sub-text;
+        }
+
+    }
+
+
+
+    
+    
+
+   
+
+    &__list {
+        transform: skewY(5deg); 
+        padding: 7rem;
+        padding-top: 10rem;
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        gap: 5rem;
+    }
+
+    &__item {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, minmax(min-content, 1fr));
+        justify-items: center;
+        align-items: center;
+
+        gap: 3rem;
+        transform: skewX(-5deg);
+
+        background-color: $color-white;
+        padding: 3rem;
+        box-shadow: $shadow-1;
+        
+        &:hover img {
+            transform: scale(1.05);
+            filter: blur(2px) brightness(80%);
+        }
+
+        &:hover figcaption {
+            transform: scale(1.1);
+            z-index: 2;
+            opacity: 1;
+        }
+        
+
+    }
+
+    &__fig-shape {
+        transform: skewX(5deg);
+        width: 100;
+        border-radius: 50%;
+        overflow: hidden;
+        display: grid;
+
+        
+        
+
+    }
+
+    &__photo {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        
+        grid-column: 1;
+        grid-row: 1; 
+
+        transition: all .2s;
+        
+        
+        
+    }
+
+    &__name {
+        grid-column: 1;
+        grid-row: 1;
+        z-index: 2;
+        justify-self: center;
+        align-self: center;
+        opacity: 0;
+        color: $color-white;
+
+        font-size: 1.7rem;
+
+        transition: all .2s;
+        
+    }
+
+    &__text {
+        transform: skewX(5deg);
+        font-size: 1.3rem;
+        line-height: 3rem;
+    }
+
+    
+
+
+    
+}
+
+.review--btn {
+    width: 50%;
+}

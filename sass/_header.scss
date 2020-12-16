@@ -1,0 +1,67 @@
+.header {
+    
+    grid-column: full-start / full-end;
+    grid-row: 1/1;
+
+    background-image: 
+    linear-gradient(to right bottom,
+     rgba($color-primary-light, 0.8),
+      rgba($color-green-light, 0.8)),
+       url(../img/nature-2.jpg);
+
+    background-size: cover;
+
+    
+    padding: 5rem;
+
+    display: grid;
+    grid-template-columns: 1fr minmax(50%, 1fr) 1fr;
+
+    margin: 1rem 1rem 0 1rem;
+
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100% );
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100% );
+        /* 95% of the viewport height */
+        height: 95vh;
+
+    
+        
+    }
+    
+
+    &__img {
+        width: 10rem;
+
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: $color-white;
+
+        
+
+        
+        
+    }
+
+    &__title {
+        font-size: 10rem;
+        letter-spacing: 1.3rem;
+    }
+
+    &__slogan {
+        color:$color-grey-light-1;
+        font-size: 3rem;
+        letter-spacing: 1rem;
+    }
+
+    &__dropdown{
+        width: 5rem;
+        height: 1px;
+    }
+}
